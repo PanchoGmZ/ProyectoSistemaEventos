@@ -76,10 +76,17 @@ foreach($a_options_status as $opt_stat)
 <h3> Repetir semanalmente hasta que</h3>
 <input type="text" placeholder="data final" name="data_final" id="data_final" value=""><BR>
 
-<input type="button" name="Cerrar" value="Fechar" onClick="fecharForm()" class="btn1">
-<input type="button" name="Cancelar" value="Excluir" class="btn1" onclick="excluirFormularioReserva(<?= $reg_id ?>)">
-<input type="submit" name="Guardar" value="Salvar" class="btn2">
+<input type="button" name="Fechar" value="Cerrar" onClick="fecharForm()" class="btn1">
+<input type="button" name="Excluir" value="Cancelar" class="btn1" onclick="excluirFormularioReserva(<?= $reg_id ?>)">
+<input type="submit" name="Salvar" value="Guardar" class="btn2">
 </form>
+<script>
+    // Al hacer clic en "Guardar", el formulario será enviado y redirigido a pagosform.php
+    document.getElementById("frm_reserva").onsubmit = function() {
+        this.action = "pagosform.php"; // Redirige a pagosform.php
+        return true; // No evita el envío
+    }
+</script>
 <?php
 
 }

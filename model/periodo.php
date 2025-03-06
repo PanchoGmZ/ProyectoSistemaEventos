@@ -44,8 +44,8 @@ class Periodo
 	function excluir($id)
 	{
 		$db = new Database();
-		$sql = 'delete from periodo where id = '.$id; 
-		return $db->query_update($sql);
+		$sql = 'DELETE FROM periodo WHERE id = ' . intval($id); 
+		return $db->query($sql);
 	}
 	
 	

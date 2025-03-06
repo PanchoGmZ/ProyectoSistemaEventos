@@ -65,7 +65,18 @@ if(!isset($id))
 
 <input type="submit" name="salvar" value="Guardar" class="btn1" />
 
-<input type="submit" name="excluir" value="Cancelar" class="btn1" />
+<?php
+// Comprobar si se ha presionado el botón "Cancelar"
+if (isset($_POST['cancelar'])) {
+    header("Location: sala_list.php");
+    exit(); // Asegurarse de que el script se detenga aquí
+}
+?>
+
+<form method="POST">
+    <input type="submit" name="cancelar" value="Cancelar" class="btn1" />
+</form>
+
 
 </form>
 
