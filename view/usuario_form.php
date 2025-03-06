@@ -70,12 +70,21 @@ if (isset($usuario[0])) {
     <?php if ($id > 0) : ?>
         <input type="submit" name="excluir" value="Eliminar" class="btn1" onclick="return confirm('¿Seguro que quieres eliminar este usuario?')" />
     <?php endif; ?>
+    <?php
+// Comprobar si se ha presionado el botón "Cancelar"
+if (isset($_POST['cancelar'])) {
+    header("Location: usuario_list.php");
+    exit(); // Asegurarse de que el script se detenga aquí
+}
+?>
 
-    <!-- Botón Cancelar con redirección usando JavaScript -->
-    <input type="button" name="cancelar" value="Cancelar" class="btn1" onclick="window.location.href='usuario_list.php';" />
+<form method="POST">
+    <input type="submit" name="cancelar" value="Cancelar" class="btn1" />
+</form>
 
 </form>
 </div>
 
 </body>
 </html>
+ 
